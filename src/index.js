@@ -1,16 +1,16 @@
 import express from 'express'
 import bodyParser from 'body-parser'
 import userController from './controllers/book.js'
-import { listBooks, createBook } from './services/book.js'
+import cors from 'cors'
 
 const app = express()
 const PORT = 8080
 
 app.use(bodyParser.json())
-
+app.use(cors())
 
 app.get('/', async (req, res) => {
-    res.send('GET!')
+    res.send('🔥 Online Library Backend!')
 })
 
 app.use('/book', userController)

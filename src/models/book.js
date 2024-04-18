@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const BookSchema = new mongoose.Schema({
-    // id: { type: Number, require: true },
+    id: { type: Number, require: true },
     title: { type: String, required: true },
     pageNumbers: { type: Number, required: true },
     isbn: { type: Number, required: true, unique: true },

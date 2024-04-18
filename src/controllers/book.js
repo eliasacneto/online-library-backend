@@ -8,6 +8,15 @@ router.get('/', async (req, res) => {
     res.send(bookList)
 })
 
+// router.get('/:id', async(req,res) =>{
+//     try {
+//         const book = await createBook(req.body)
+//         res.status(201).send(book)
+//     } catch (err) {
+//         res.status(400).send(err)
+//     }
+// })
+
 router.post('/', async (req, res) => {
     try {
         const book = await createBook(req.body)
