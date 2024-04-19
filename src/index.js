@@ -1,10 +1,12 @@
 import express from 'express'
 import bodyParser from 'body-parser'
 import userController from './controllers/book.js'
+import booksController from './controllers/books.js'
 import cors from 'cors'
 
 const app = express()
 const PORT = 8080
+
 
 app.use(bodyParser.json())
 app.use(cors())
@@ -14,6 +16,7 @@ app.get('/', async (req, res) => {
 })
 
 app.use('/book', userController)
+app.use('/books', booksController)
 
 
 app.listen(PORT, () => { console.log(` 🔥 Server running on http://localhost:${PORT}`) })

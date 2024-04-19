@@ -7,18 +7,23 @@ export const listBooks = async () => {
     return books
 }
 
+export const findBook = async (id) => {
+    await databaseConnection();
+    const bookChosen = await Book.findOne({ id: id });
+    return bookChosen;
+};
+
 export const createBook = async (book) => {
     await databaseConnection()
     const createdBook = await Book.create(book)
     return createdBook
 }
-
 export const deleteBook = async (id) => {
     await databaseConnection()
-    await Book.findByIdAndDelete(id)
+    await Book.deleteOne({ id: id })
 }
-
 export const updateBook = async (id, newBody) => {
-    await databaseConnection()
-    await Book.findByIdAndUpdate(id, newBody)
-}
+    await databaseConnection();
+    const updatedBook = await Book.findOneAndUpdate({ id: id }, newBody, { new: true });
+    return updatedBook;
+};
