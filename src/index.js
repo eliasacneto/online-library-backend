@@ -6,9 +6,9 @@ import cors from 'cors'
 
 const app = express()
 const PORT = 8080
+app.use(cors())
 
 app.use(bodyParser.json())
-app.use(cors())
 
 app.get('/', async (req, res) => {
     res.send('🔥 Library Backend is on!')
