@@ -1,7 +1,8 @@
 import mongoose from "mongoose";
 import 'dotenv/config'
 
-const URI = process.env.DB_KEY
+// const URI = process.env.DB_KEY
+const URI = 'mongodb+srv://admin:xinYSL9HGcAOaJcV@cluster0.wcdaozq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
 
 const databaseConnection = async () => {
 
